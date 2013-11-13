@@ -18,7 +18,8 @@ Extras:
 
 encode.py is a sample that will convert your account and license key into a base64 string to use as an authKey if desired.
 
-credentials.py  is a safe place to store your account credentials in the form  => development = '110001234:A1B2C3D4E5F6G7'
+credentials.py  is a safe place to store your account credentials in the form:
+development = '110001234:A1B2C3D4E5F6G7'
 
 data.py is a sample GetTaxRequest body that is used by GetTaxRequest.py
 
