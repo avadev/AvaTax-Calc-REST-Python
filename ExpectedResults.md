@@ -1,3 +1,4 @@
+
 Typical Results from a validate request:
 
 Address Entered: 
@@ -135,4 +136,3 @@ ERROR:
 ]
 }
 }
-
