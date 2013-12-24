@@ -1,20 +1,19 @@
 #required imports
+import sys
 import urllib2
+import urllib
+import json
 import base64
-
-#credentials.py contains the Base64 endocde string
+#credentials.py contains development = 'account:licensekey'
 from credentials import development
-#from credentials import production
-#from credentials import authKey
-authKey = base64.b64encode(development)
-#authKey = base64.b64encode(production)
 
+# pass credentials to authkey
+authKey = base64.b64encode(development)
 
 #Collect address from User input - replace white space with '+'
 print ""
 print "Enter Address to be Validated"
 print (30 * '-')
-
 l1 = raw_input("Line1: ").replace (" ", "+"); 
 l2 = raw_input("Line2: ").replace (" ", "+"); 
 l3 = raw_input("Line3: ").replace (" ", "+"); 
@@ -35,13 +34,16 @@ url = ('https://development.avalara.net/1.0/address/validate?Line1='+l1+'&Line2=
 headers = {"Content-Type":"application/json", "Authorization":"Basic " + authKey}
 request = urllib2.Request(url)
 for key,value in headers.items():
-    request.add_header(key,value) 
-
-#Read and display results in json
-print ""
-print "The Normalized addess is:"
-print (30 * '-')
-response = urllib2.urlopen(request) 
-
+   request.add_header(key,value) 
+try:
+    response = urllib2.urlopen(request)
+#Error handling
+except urllib2.URLError as e:
+    if hasattr(e, 'code'):
+        print 'HTTP Error code: ', e.code
+        print 'Message: ', e.read()
+        sys.exit()
+    else: 
+        print "Success"
 html = response.read()
 print html

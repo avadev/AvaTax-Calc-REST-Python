@@ -17,7 +17,47 @@ headers = {"Content-Type":"application/json", "Authorization":"Basic " + authKey
 #Request body in the form ({"element":"data","element":"data"}) - OR
 #import json sample from data.py
 from data import body
-data =  (body)
+data =  data =  ({
+    "DocDate": "2013-12-23",
+    "CompanyCode": "",
+    "CustomerCode": "AvaTax",
+    "DocCode": "220131223-3",
+    "DocType": "SalesOrder",
+    "Commit": "false",
+    "Addresses": 
+    [
+    {
+        "AddressCode": "1",
+        "Line1": "435 Ericksen Avenue Northeast",
+        "Line2": "#250",
+        "City": "Bainbridge Island",
+        "Region": "AK",
+        "PostalCode": "98110",
+        "Country": "US",
+    },
+    {                
+        "AddressCode": "2",
+        "Line1": "100 Ravine lane",
+        "Line2": "#220",
+        "City": "Bainbridge Island",
+        "Region": "AK",
+        "PostalCode": "98110",
+        "Country": "US",
+        }
+    ],
+    "Lines": 
+    [
+    {
+        "LineNo": "1",
+        "DestinationCode": "2",
+        "OriginCode": "1",
+        "ItemCode": "AvaDocs",
+        "Description": "Box of Avalara Documentation",
+        "Qty": "1",
+        "Amount": "100",
+    },
+    ],
+})
 
 #format data for request
 data = json.dumps(data)
@@ -38,6 +78,3 @@ except urllib2.URLError as e:
         print "Success"
 html = response.read()
 print html
-
-
-
