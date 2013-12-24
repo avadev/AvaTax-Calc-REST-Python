@@ -1,11 +1,10 @@
-
 Typical Results from a validate request:
 
 Address Entered: 
 7462+kearny+st   commerce+city co  
 
-The Normalized addess is:
-------------------------------
+A Normalized addess is:
+
 {
 	"Address": {
 		"County": "Adams",
