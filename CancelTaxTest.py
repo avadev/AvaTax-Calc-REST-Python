@@ -4,20 +4,24 @@ import urllib2
 import urllib
 import json
 import base64
-#credentials.py contains development = 'account:licensekey'
-from credentials import development
 
-# pass credentials to authkey
-authKey = base64.b64encode(development)
+## pass credentials to authkey
+##('accountNumber:licenseKey') OR
+##('userName:password') from Avalara Admin Account
 
-#Required URI and request headers
-url = "https://development.avalara.net/1.0/tax/get"
+authKey = base64.b64encode('1234567890:A1B2C3D4E5F6G7H8')
+
+##Required URI and request headers
+url = "https://development.avalara.net/1.0/tax/cancel"
 headers = {"Content-Type":"application/json", "Authorization":"Basic " + authKey}
 
-#Request body in the form ({"element":"data","element":"data"}) - OR
-#import json sample from data.py
-from data import body
-data =  (body)
+
+data = ({
+"CompanyCode": 'APITrialCompany',
+"DocType" : 'SalesInvoice',
+"DocCode" : 'INV001',
+"CancelCode" : 'DocVoided',
+})
 
 #format data for request
 data = json.dumps(data)
@@ -38,6 +42,3 @@ except urllib2.URLError as e:
         print "Success"
 html = response.read()
 print html
-
-
-

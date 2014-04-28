@@ -1,52 +1,58 @@
-Avatax /Python 2.7 sample requests making use of the Avalara RESTful web service.
+<body bgcolor="#FFFFFF">
+AvaTax-Calc-REST-Python =====================
 
-What is needed to run these samples is Python 2.7 and an active AvaTax Account. 
+AvaTax-Calc-REST-Python is a set of python sample requests that demonstrate the [AvaTax REST API](http://developer.avalara.com/api-docs/rest) methods:
+ [tax/get POST](http://developer.avalara.com/api-docs/rest/tax/post/), [tax/get GET](http://developer.avalara.com/api-docs/rest/tax/get), [tax/cancel POST](http://developer.avalara.com/api-docs/rest/tax/cancel), and [address/validate GET](http://developer.avalara.com/api-docs/rest/address-validation).
+ 
+ For more information on the use of these methods and the AvaTax product, please visit our [developer site](http://developer.avalara.com/) or [homepage](http://www.avalara.com/)
+ 
+Contents:
+----------
+<table>
+  <th colspan="2" align=left>Sample Files</th>
+  <tr>
+    <td>ValidateAddressTest.txt</td>
+    <td>Demonstrates the <a href="http://developer.avalara.com/api-docs/rest/address-validation">ValidateAddress</a> method to <a href="http://developer.avalara.com/api-docs/api-reference/address-validation">normalize an address</a>.</td>
+  </tr>
+  <tr>
+    <td>EstimateTaxTest.txt</td>
+    <td>Demonstrates the <a href="http://developer.avalara.com/api-docs/rest/tax/get">EstimateTax</a> method used for product- and line- indifferent tax estimates.</td>
+  </tr>
+  <tr>
+    <td>GetTaxTest.txt</td>
+    <td>Demonstrates the <a href="http://developer.avalara.com/api-docs/rest/tax/post">GetTax</a> method used for product- and line- specific <a href="http://developer.avalara.com/api-docs/api-reference/gettax">calculation</a>.</td>
+  </tr>
+  <tr>
+    <td>PingTest.txt</td>
+    <td>Uses a hardcoded EstimateTax call to test connectivity and credential information.</td>
+  </tr>
+  <tr>
+    <td>CancelTaxTest.txt</td>
+    <td>Demonstrates the <a href="http://developer.avalara.com/api-docs/rest/tax/cancel">CancelTax</a> method used to <a href="http://developer.avalara.com/api-docs/api-reference/canceltax">void a document</a>.</td>
+  </tr>
+  <th colspan="2" align=left>Other Files</th>
+  <tr>
+    <td>.gitattributes</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>.gitignore</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>LICENSE.md</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>README.md</td>
+    <td>-</td>
+  </tr>
+</table>
+Dependencies:
+-----------
+-Python 2.7 or later
 
-If you do not have an AvaTax account you can sign up for a free trial account at: http://developer.avalara.com/api-get-started
-
-For an overview of how AvaTax Calculates tax using our API's visit http://developer.avalara.com/api-docs/designing-your-integration
-
-Samples included are listed below with associated links to documentation:
-
-ValidateRequest.py (http://developer.avalara.com/api-docs/rest/address-validation)
-
-GetTaxRequest.py POST (http://developer.avalara.com/api-docs/rest/tax/post)
-
-GetTaxRequestSerialized.py POST (http://developer.avalara.com/api-docs/rest/tax/post)
-
-CancelTaxRequest.py (http://developer.avalara.com/api-docs/rest/tax/cancel)
-
-Extras:
-
-encode.py is a sample that will convert your account and license key into a base64 string to use as an authKey if desired.
-
-credentials.py  is a safe place to store your account credentials in the form:
-development = '110001234:A1B2C3D4E5F6G7'
-
-data.py is a sample GetTaxRequest body that can be imported by GetTaxRequest.py
-
-GetTaxRequestSerialized.py contains a sample json body
-
-Steps to use python samples:
-
-1. Populate Credentials with your development account number and license key in the form [development = 'account:licensekey'] - Note: AvaTax Admin Account username and password can be used alternatively.
-
-2. Validate your destination address using the Validate.py sample. Sample will prompt you for address information.
-
-3. Use the results from Validate.py to populate a GetTaxRequest. 
--- For GetTaxRequest.py modify data.py as required. Left as it is, should return a result from your default AvaTax Organization.
--- For GetTaxRequestSerialized modify the request json data within the sample.
-
-4. The CancelTax.py sample has 4 required fields and is designed to prompt you for the values:
--- CompanyCode is the company that the GetTaxRequest was committed. This field must be populated even if it was a default company code.
--- DocType must be one of the following: SalesInvoice, ReturnInvoice, PurchaseInvoice.
--- DocCode is the Document Code or Invoice number that was used to commit the document.
--- CancelCode must be one of the following: 
---   Unspecified
---   PostFailed
---   DocDeleted
---   DocVoided
---   AdjustmentCancelled
-See http://developer.avalara.com/api-docs/api-reference/canceltax for more details
-
-For more information on how to calculate tax using AvaTax API as well as some recommended use cases, visit the Avalara Developer's Network at http://developer.avalara.com/api-docs
+Requirements:
+----------
+- Authentication requires an valid **Account Number** and **License Key**, which should be entered in each test file (e.g. GetTaxTest.py) that you would like to run.
+- If you do not have an AvaTax account, a free trial account can be acquired through our [developer site](http://developer.avalara.com/api-get-started)
