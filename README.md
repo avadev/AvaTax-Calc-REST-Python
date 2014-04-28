@@ -13,19 +13,19 @@
     <td><div align="center"><strong>Method Demonstrated</strong></div></td>
   </tr>
   <tr>
-    <td><strong>ValidateAddressTest.txt</strong></td>
+    <td><strong>ValidateAddressTest.py</strong></td>
     <td>Demonstrates the <a href="http://developer.avalara.com/api-docs/rest/address-validation">ValidateAddress</a> method to <a href="http://developer.avalara.com/api-docs/api-reference/address-validation">normalize an address</a>.</td>
   </tr>
   <tr>
-    <td><strong>EstimateTaxTest.txt</strong></td>
+    <td><strong>EstimateTaxTest.py</strong></td>
     <td>Demonstrates the <a href="http://developer.avalara.com/api-docs/rest/tax/get">EstimateTax</a> method used for product- and line- indifferent tax estimates.</td>
   </tr>
   <tr>
-    <td><strong>GetTaxTest.txt</strong></td>
+    <td><strong>GetTaxTest.py</strong></td>
     <td>Demonstrates the <a href="http://developer.avalara.com/api-docs/rest/tax/post">GetTax</a> method used for product- and line- specific <a href="http://developer.avalara.com/api-docs/api-reference/gettax">calculation</a>.</td>
   </tr>
   <tr>
-    <td><strong>CancelTaxTest.txt</strong></td>
+    <td><strong>CancelTaxTest.py</strong></td>
     <td>Demonstrates the <a href="http://developer.avalara.com/api-docs/rest/tax/cancel">CancelTax</a> method used to <a href="http://developer.avalara.com/api-docs/api-reference/canceltax">void a document</a>.</td>
   </tr>
   <th colspan="2" align=left><strong>Other Files Included in this Repository</strong></th>
