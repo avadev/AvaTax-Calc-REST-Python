@@ -1,23 +1,23 @@
-#required imports
+# Required Imports
 import sys
 import urllib2
 import urllib
 import json
 import base64
 
-## pass credentials to authkey
-##('accountNumber:licenseKey') OR
-##('userName:password') from Avalara Admin Account
-
-authKey = base64.b64encode('1234567890:A1B2C3D4E5F6G7H8')
-
-##Required URI and request headers
+# Required Parameters
 url = "https://development.avalara.net/1.0/tax/get"
+accountNumber = '1234567890'
+licenseKey = 'A1B2C3D4E5F6G7H8''
+
+# Build Connector
+credentials = accountNumber + ':' + licenseKey
+authKey = base64.b64encode(credentials)
 headers = {"Content-Type":"application/json", "Authorization":"Basic " + authKey}
 
-
-data =  data =  ({
-##Required Request Parameters                  
+# Data 
+data = ({
+# #Required Request Parameters                  
 "CustomerCode": "ABC4335",
 "DocDate": "2014-01-01",
 "CompanyCode": "APITrialCompany",
@@ -25,20 +25,20 @@ data =  data =  ({
 "DocCode": "INV001",
 "DetailLevel": "Tax",
 "Commit": "false",
-"DocType": "SalesOrder",
+"DocType": "SalesInvoice",
 
-#Situational Request Document Parameters
-#"CustomerUsageType": "G",
-#"ExemptionNo": "12345",
-#"Discount": "50",
-#"TaxOverride": {
+# Situational Request Document Parameters
+# "CustomerUsageType": "G",
+# "ExemptionNo": "12345",
+# "Discount": "50",
+# "TaxOverride": {
 #    "TaxOverrideType": "TaxDate",
 #    "Reason": "Adjustment for return",
 #    "TaxDate": "2013-07-01",
 #    "TaxAmount": "0",
  #   },
 
-##Optional Request Parameters
+# #Optional Request Parameters
 "PurchaseOrderNo": "PO123456",
 "ReferenceCode": "ref123456",
 "PosLaneCode": "09",
@@ -79,7 +79,7 @@ data =  data =  ({
     "DestinationCode": "02",
     "Description": "Red Size 7 Widget",
     "TaxCode": "NT",
-#Situational Request Parameters
+# Situational Request Parameters
 #    "CustomerUsageType": "L",
 #    "Discounted": "true",
 #    "TaxIncluded": "true",
@@ -112,16 +112,17 @@ data =  data =  ({
     ],
 })
 
-#format data for request
+# Format data 
 data = json.dumps(data)
 
-#request
-request = urllib2.Request(url,data,{'Content-Type': 'application/json'} )
-for key,value in headers.items():
-   request.add_header(key,value) 
+# Submit Request
+request = urllib2.Request(url, data, {'Content-Type': 'application/json'})
+for key, value in headers.items():
+   request.add_header(key, value) 
 try:
     response = urllib2.urlopen(request)
-#Error handling
+
+# Results and Error Handling
 except urllib2.URLError as e:
     if hasattr(e, 'code'):
         print 'HTTP Error code: ', e.code
