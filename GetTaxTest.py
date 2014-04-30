@@ -6,26 +6,33 @@ import json
 import base64
 
 # Required Parameters
-url = "https://development.avalara.net/1.0/tax/get"
+hostName = 'https://development.avalara.net'
+resource = '/1.0/tax/'
+method = 'get?'
+
+# Required Credentials
 accountNumber = '1234567890'
 licenseKey = 'A1B2C3D4E5F6G7H8''
+credentials = accountNumber + ':' + licenseKey
 
 # Build Connector
-credentials = accountNumber + ':' + licenseKey
 authKey = base64.b64encode(credentials)
 headers = {"Content-Type":"application/json", "Authorization":"Basic " + authKey}
+
+# Build URI
+url = hostName + resource + method  
 
 # Data 
 data = ({
 # #Required Request Parameters                  
 "CustomerCode": "ABC4335",
 "DocDate": "2014-01-01",
-"CompanyCode": "APITrialCompany",
+"CompanyCode": "timzoffice",
 "Client": "AvaTaxSample",
-"DocCode": "INV001",
+"DocCode": "INV0039",
 "DetailLevel": "Tax",
 "Commit": "false",
-"DocType": "SalesInvoice",
+"DocType": "SalesOrder",
 
 # Situational Request Document Parameters
 # "CustomerUsageType": "G",
@@ -116,11 +123,11 @@ data = ({
 data = json.dumps(data)
 
 # Submit Request
-request = urllib2.Request(url, data, {'Content-Type': 'application/json'})
+getTaxRequest = urllib2.Request(url, data, {'Content-Type': 'application/json'})
 for key, value in headers.items():
-   request.add_header(key, value) 
+   getTaxRequest.add_header(key, value) 
 try:
-    response = urllib2.urlopen(request)
+    response = urllib2.urlopen(getTaxRequest)
 
 # Results and Error Handling
 except urllib2.URLError as e:
@@ -132,3 +139,4 @@ except urllib2.URLError as e:
         print "Success"
 html = response.read()
 print html
+print 'Complete URI Passed:  ' + url

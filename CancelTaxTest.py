@@ -6,15 +6,20 @@ import json
 import base64
 
 # Required Parameters
-url = "https://development.avalara.net/1.0/tax/cancel"
+hostName = 'https://development.avalara.net'
+resource = '/1.0/tax/'
+method = 'cancel'
+
+# Required Credentials
 accountNumber = '1234567890'
 licenseKey = 'A1B2C3D4E5F6G7H8''
+credentials = accountNumber + ':' + licenseKey
 
 # Required Data Elements
 data = ({
-"CompanyCode": 'APITrialCompany',
+"CompanyCode": 'timzoffice',
 "DocType" : 'SalesInvoice',
-"DocCode" : 'INV001',
+"DocCode" : '100000',
 "CancelCode" : 'DocVoided',
 })
 
@@ -22,16 +27,18 @@ data = ({
 data = json.dumps(data)
 
 # Build Connector
-credentials = accountNumber + ':' + licenseKey
 authKey = base64.b64encode(credentials)
 headers = {"Content-Type":"application/json", "Authorization":"Basic " + authKey}
 
+# Build URI
+url = hostName + resource + method  
+
 # Submit Request
-request = urllib2.Request(url, data, {'Content-Type': 'application/json'})
+cancelTaxRequest = urllib2.Request(url, data, {'Content-Type': 'application/json'})
 for key, value in headers.items():
-   request.add_header(key, value) 
+   cancelTaxRequest.add_header(key, value) 
 try:
-    response = urllib2.urlopen(request)
+    response = urllib2.urlopen(cancelTaxRequest)
 
 # Error handling
 except urllib2.URLError as e:
@@ -43,3 +50,4 @@ except urllib2.URLError as e:
         print "Success"
 html = response.read()
 print html
+print 'Complete URI Passed:  ' + url
