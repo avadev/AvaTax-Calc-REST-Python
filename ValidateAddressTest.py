@@ -5,17 +5,12 @@ import urllib
 import json
 import base64
 
-# Required Parameters
-hostName = 'https://development.avalara.net'
-resource = '/1.0/address/'
-method = 'validate'
-
-# Required Credentials
+# Required Header Parameters
+serviceURL = 'https://development.avalara.net'
 accountNumber = '1234567890'
-licenseKey = 'A1B2C3D4E5F6G7H8''
-credentials = accountNumber + ':' + licenseKey
+licenseKey = 'A1B2C3D4E5F6G7H8'
 
-#Enter Address to be validated
+# Required Request Parameters
 Line1 = '118 N Clark St'
 Line2 = 'Suite 100'
 Line3 = 'ATTN Accounts Payable'
@@ -24,7 +19,7 @@ Region = 'IL'
 PostalCode = '60602'
 Country = 'US'
 
-# Build Address String- replace white spaces with '+'
+# Construct Address String
 line1 = Line1.replace (" ", "+"); 
 line2 = Line2.replace (" ", "+"); 
 line3 = Line3.replace (" ", "+"); 
@@ -40,9 +35,8 @@ setAddress = ('?&Line1=' + line1 + '&Line2=' + line2 + '&Line3=' + line3
 credentials = accountNumber + ':' + licenseKey
 authKey = base64.b64encode(credentials)
 headers = {"Content-Type":"application/json", "Authorization":"Basic " + authKey}
-
-# Build URI
-url = hostName + resource + method
+resource = '/1.0/address/validate'
+url = serviceURL + resource 
 
 # Submit Request
 validateAddressRequest = urllib2.Request(url + setAddress)
@@ -61,4 +55,3 @@ except urllib2.URLError as e:
         print "Success"
 html = response.read()
 print html
-print 'Complete URI Passed:  ' + url

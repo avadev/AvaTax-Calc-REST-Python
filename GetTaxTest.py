@@ -5,35 +5,21 @@ import urllib
 import json
 import base64
 
-# Required Parameters
-hostName = 'https://development.avalara.net'
-resource = '/1.0/tax/'
-method = 'get?'
-
-# Required Credentials
+# Required Header Parameters
+serviceURL = 'https://development.avalara.net'
 accountNumber = '1234567890'
-licenseKey = 'A1B2C3D4E5F6G7H8''
-credentials = accountNumber + ':' + licenseKey
+licenseKey = 'A1B2C3D4E5F6G7H8'
 
-# Build Connector
-authKey = base64.b64encode(credentials)
-headers = {"Content-Type":"application/json", "Authorization":"Basic " + authKey}
-
-# Build URI
-url = hostName + resource + method  
-
-# Data 
-data = ({
-# #Required Request Parameters                  
+# Required Request Parameters
+data = ({                
 "CustomerCode": "ABC4335",
 "DocDate": "2014-01-01",
-"CompanyCode": "timzoffice",
+"CompanyCode": "APITrialCompany",
 "Client": "AvaTaxSample",
-"DocCode": "INV0039",
+"DocCode": "INV001",
 "DetailLevel": "Tax",
 "Commit": "false",
-"DocType": "SalesOrder",
-
+"DocType": "SalesInvoice",
 # Situational Request Document Parameters
 # "CustomerUsageType": "G",
 # "ExemptionNo": "12345",
@@ -43,9 +29,9 @@ data = ({
 #    "Reason": "Adjustment for return",
 #    "TaxDate": "2013-07-01",
 #    "TaxAmount": "0",
- #   },
+#   },
 
-# #Optional Request Parameters
+# Optional Request Parameters
 "PurchaseOrderNo": "PO123456",
 "ReferenceCode": "ref123456",
 "PosLaneCode": "09",
@@ -122,6 +108,13 @@ data = ({
 # Format data 
 data = json.dumps(data)
 
+# Build Connector
+credentials = accountNumber + ':' + licenseKey
+authKey = base64.b64encode(credentials)
+headers = {"Content-Type":"application/json", "Authorization":"Basic " + authKey}
+resource = '/1.0/tax/get'
+url = serviceURL + resource 
+
 # Submit Request
 getTaxRequest = urllib2.Request(url, data, {'Content-Type': 'application/json'})
 for key, value in headers.items():
@@ -139,4 +132,3 @@ except urllib2.URLError as e:
         print "Success"
 html = response.read()
 print html
-print 'Complete URI Passed:  ' + url
