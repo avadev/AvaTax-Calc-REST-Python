@@ -5,7 +5,7 @@
 <p> Python 2.7 or later </p>
 <h4>Requirements</h4>
 <p> Authentication requires a valid <strong>Account Number</strong> and <strong>License Key</strong>, which should be entered in <em>each </em>of the sample requests that you would like to test.</p>
-<p>If you do not have an AvaTax account, a free trial account can be acquired through our [developer site](http://developer.avalara.com/api-get-started) </p>
+<p>If you do not have an AvaTax account, a free trial account can be acquired through our <a href="http://developer.avalara.com/api-get-started">developer site</a> </p>
 <p><strong>Samples Included</strong></p>
 <table>
   <tr>
