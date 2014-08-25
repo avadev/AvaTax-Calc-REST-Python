@@ -4,18 +4,15 @@
 <h4>Dependencies</h4>
 <p> Python 2.7 or later </p>
 <h4>Requirements</h4>
-<<<<<<< HEAD
 <p> Authentication requires a **Service URL**, a valid **Account Number** and **License Key**. Samples are coded to use the provided <em>credentials.py</em> sample that you will need to modify with your account information.</p>
 <p>If you do not have an AvaTax account, a free trial account can be acquired through our [developer site](http://developer.avalara.com/api-get-started) </p>
-=======
 <p> Authentication requires a valid <strong>Account Number</strong> and <strong>License Key</strong>, which should be entered in <em>each </em>of the sample requests that you would like to test.</p>
 <p>If you do not have an AvaTax account, a free trial account can be acquired through our <a href="http://developer.avalara.com/api-get-started">developer site</a> </p>
->>>>>>> origin/master
 <p><strong>Samples Included</strong></p>
 <table>
   <tr>
-    <td><div align="center"><strong>API</strong></div></td>
-    <td><div align="center"><strong>Method Demonstrated</strong></div></td>
+    <td width="176"><div align="center"><strong>API</strong></div></td>
+    <td width="628"><div align="center"><strong>Method Demonstrated</strong></div></td>
   </tr>
   <tr>
     <td><strong>credentials.py</strong></td>
@@ -61,3 +58,4 @@
 <p>The <strong>Avalara AvaTax API Reference</strong> is located here: <a href="http://developer.avalara.com/api-docs/avalara-avatax-api-reference" target="_blank">http://developer.avalara.com/api-docs/avalara-avatax-api-reference</a></p>
 <p>Find out what other developers are talking about on the <strong><em>Avalara Developer Community Forum</em></strong> located here: <a href="https://community.avalara.com/avalara/category_sets/developers" target="_blank">https://community.avalara.com/avalara/category_sets/developers</a></p>
 <p><strong>Frequently Asked Questions</strong> regarding all Avalara products is located here: <a href="https://help.avalara.com/" target="_blank">https://help.avalara.com/</a></p>
+
