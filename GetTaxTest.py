@@ -4,11 +4,7 @@ import urllib2
 import urllib
 import json
 import base64
-
-# Required Header Parameters
-serviceURL = 'https://development.avalara.net'
-accountNumber = '1234567890'
-licenseKey = 'A1B2C3D4E5F6G7H8'
+from credentials import serviceURL, accountNumber, licenseKey
 
 # Required Request Parameters
 data = ({                

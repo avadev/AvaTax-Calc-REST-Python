@@ -4,13 +4,17 @@
 <h4>Dependencies</h4>
 <p> Python 2.7 or later </p>
 <h4>Requirements</h4>
-<p> Authentication requires an valid **Account Number** and **License Key**, which should be entered in <em>each</em> test file  that you would like to run (e.g. GetTaxTest.py).</p>
+<p> Authentication requires a **Service URL**, a valid **Account Number** and **License Key**. Samples are coded to use the provided <em>credentials.py</em> sample that you will need to modify with your account information.</p>
 <p>If you do not have an AvaTax account, a free trial account can be acquired through our [developer site](http://developer.avalara.com/api-get-started) </p>
 <p><strong>Samples Included</strong></p>
 <table>
   <tr>
     <td><div align="center"><strong>API</strong></div></td>
     <td><div align="center"><strong>Method Demonstrated</strong></div></td>
+  </tr>
+  <tr>
+    <td><strong>credentials.py</strong></td>
+    <td>Used for centralizing URL, Account Number and License Key for all API samples.</a>.</td>
   </tr>
   <tr>
     <td><strong>ValidateAddressTest.py</strong></td>
