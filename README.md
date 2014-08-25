@@ -1,11 +1,16 @@
-<p>The<strong> AvaTax-Calc-REST-Python</strong> is a set of python sample requests that demonstrate the <a href="http://developer.avalara.com/api-docs/rest" target="_blank"><strong>AvaTax REST API</strong></a> methods:
+<p>The<strong> AvaTax-Calc-REST-Python </strong>repository is a set of python sample requests that demonstrate the <a href="http://developer.avalara.com/api-docs/rest" target="_blank"><strong>AvaTax REST API</strong></a> methods:
   <a href="http://developer.avalara.com/api-docs/rest/tax/post/" target="_blank"><strong>tax/get POST</strong></a>, <a href="http://developer.avalara.com/api-docs/rest/tax/get" target="_blank"><strong>tax/get GET</strong></a>, <a href="http://developer.avalara.com/api-docs/rest/tax/cancel" target="_blank"><strong>tax/cancel POST</strong></a>, and<a href="http://developer.avalara.com/api-docs/rest/address-validation" target="_blank"><strong> address/validate GET</strong></a>.</p>
 <p> For more information on the use of these methods and the AvaTax product, please visit our <strong>Developer's Network </strong>site at <a href="http://developer.avalara.com/" target="_blank">http://developer.avalara.com/</a> or <strong>Avalara's Home </strong>page at <a href="http://www.avalara.com/" target="_blank">http://www.avalara.com/</a></p>
 <h4>Dependencies</h4>
 <p> Python 2.7 or later </p>
 <h4>Requirements</h4>
+<<<<<<< HEAD
 <p> Authentication requires a **Service URL**, a valid **Account Number** and **License Key**. Samples are coded to use the provided <em>credentials.py</em> sample that you will need to modify with your account information.</p>
 <p>If you do not have an AvaTax account, a free trial account can be acquired through our [developer site](http://developer.avalara.com/api-get-started) </p>
+=======
+<p> Authentication requires a valid <strong>Account Number</strong> and <strong>License Key</strong>, which should be entered in <em>each </em>of the sample requests that you would like to test.</p>
+<p>If you do not have an AvaTax account, a free trial account can be acquired through our <a href="http://developer.avalara.com/api-get-started">developer site</a> </p>
+>>>>>>> origin/master
 <p><strong>Samples Included</strong></p>
 <table>
   <tr>
