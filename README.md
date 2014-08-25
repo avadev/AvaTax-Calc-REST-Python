@@ -4,7 +4,7 @@
 <h4>Dependencies</h4>
 <p> Python 2.7 or later </p>
 <h4>Requirements</h4>
-<p> Authentication requires a **Service URL**, a valid **Account Number** and **License Key**. Samples are coded to use the provided <em>credentials.py</em> sample that you will need to modify with your account information.</p>
+<p> Authentication requires a <strong>Service URL</strong>, a valid <strong>Account Number</strong> and<strong> License Key</strong>. Samples are coded to use the provided <em>credentials.py</em> sample that you will need to modify with your account information.</p>
 <p>If you do not have an AvaTax account, a free trial account can be acquired through our [developer site](http://developer.avalara.com/api-get-started) </p>
 <p> Authentication requires a valid <strong>Account Number</strong> and <strong>License Key</strong>, which should be entered in <em>each </em>of the sample requests that you would like to test.</p>
 <p>If you do not have an AvaTax account, a free trial account can be acquired through our <a href="http://developer.avalara.com/api-get-started">developer site</a> </p>
