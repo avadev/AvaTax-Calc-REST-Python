@@ -1,3 +1,5 @@
+[Other Samples](http://developer.avalara.com/api-docs/api-sample-code)
+
 <p>The<strong> AvaTax-Calc-REST-Python </strong>repository is a set of python sample requests that demonstrate the <a href="http://developer.avalara.com/api-docs/rest" target="_blank"><strong>AvaTax REST API</strong></a> methods:
   <a href="http://developer.avalara.com/api-docs/rest/tax/post/" target="_blank"><strong>tax/get POST</strong></a>, <a href="http://developer.avalara.com/api-docs/rest/tax/get" target="_blank"><strong>tax/get GET</strong></a>, <a href="http://developer.avalara.com/api-docs/rest/tax/cancel" target="_blank"><strong>tax/cancel POST</strong></a>, and<a href="http://developer.avalara.com/api-docs/rest/address-validation" target="_blank"><strong> address/validate GET</strong></a>.</p>
 <p> For more information on the use of these methods and the AvaTax product, please visit our <strong>Developer's Network </strong>site at <a href="http://developer.avalara.com/" target="_blank">http://developer.avalara.com/</a> or <strong>Avalara's Home </strong>page at <a href="http://www.avalara.com/" target="_blank">http://www.avalara.com/</a></p>
